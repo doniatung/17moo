@@ -31,27 +31,27 @@ var findIt = function(e) {
     console.log(style.innerHTML);
     ratio = dist / max * 100;
     if (ratio < 10) {
-        style.innerHTML = style.innerHTML + "body {background-color: white;} div {cursor:pointer;}";
+        style.innerHTML = style.innerHTML + "body {background-color: lightcyan;} div {cursor:pointer;}";
         document.addEventListener("click", popup);
-    }
-    else if (ratio < 40) {
-        style.innerHTML = style.innerHTML + "body {background-color: lightcyan;} div {cursor:default;}";
-        document.removeEventListener("click", popup);
     }
     else if (ratio < 40) {
         style.innerHTML = style.innerHTML + "body {background-color: paleturquoise;} div {cursor:default;}";
         document.removeEventListener("click", popup);
     }
-    else if (ratio < 60) {
+    else if (ratio < 40) {
         style.innerHTML = style.innerHTML + "body {background-color: turquoise;} div {cursor:default;}";
         document.removeEventListener("click", popup);
     }
-    else if (ratio < 80) {
+    else if (ratio < 60) {
         style.innerHTML = style.innerHTML + "body {background-color: mediumturquoise;} div {cursor:default;}";
         document.removeEventListener("click", popup);
     }
-    else {
+    else if (ratio < 80) {
         style.innerHTML = style.innerHTML + "body {background-color: lightseagreen;} div {cursor:default;}";
+        document.removeEventListener("click", popup);
+    }
+    else {
+        style.innerHTML = style.innerHTML + "body {background-color: black;} div {cursor:default;}";
         document.removeEventListener("click", popup);
     }
 };
